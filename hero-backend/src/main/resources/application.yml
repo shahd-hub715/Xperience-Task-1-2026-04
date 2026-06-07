@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: hero
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/hero
+    username: postgres
+    password: "1234"
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        default_schema: hero
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+
+wasender:
+  api-key: "${WASENDERAPI_KEY:c6dbb7d1b7d29da8ac7521b07cb81ad0d0d96f6bf6fede52684af00a74dd2f78}"
+  api-url: "https://wasenderapi.com/api/send-message"
+
+server:
+  port: 8280
